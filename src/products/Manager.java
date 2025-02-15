@@ -14,7 +14,7 @@ public class Manager {
 
     public void showProducts(){
         for (Product product : allProducts){
-            System.out.println("name: " + product.name + " id: " + product.id);
+            System.out.print("name: " + product.name + " id: " + product.id + " | ");
         }
     }
 
@@ -27,5 +27,14 @@ public class Manager {
         }
 
         allProducts.add(new Product(name, value, allProducts.size()));
+    }
+
+    public Product findProduct(int id){
+        for(Product product : allProducts){
+            if(product.id == id){
+                return product;
+            }
+        }
+        return null;
     }
 }
