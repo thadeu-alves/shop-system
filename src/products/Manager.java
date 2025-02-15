@@ -18,14 +18,7 @@ public class Manager {
         }
     }
 
-    public void addProduct(String name, double value, int id){
-        for (Product product : allProducts){
-            if(product.id == id){
-                System.out.println("Error");
-                return;
-            }
-        }
-
+    public void addProduct(String name, double value){
         allProducts.add(new Product(name, value, allProducts.size()));
     }
 
@@ -36,5 +29,14 @@ public class Manager {
             }
         }
         return null;
+    }
+
+    public void editProduct(int id, String name, double value){
+        for(Product product : allProducts){
+            if(product.id == id){
+                product.name = name;
+                product.value = value;
+            }
+        }
     }
 }
